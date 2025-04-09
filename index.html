@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор Електричних Навантажень</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Веб-калькулятор Електричних Навантажень</h1>
+    <form id="calc-form">
+      <h2>Дані для розрахунку</h2>
+      <label for="equipment-name">Найменування ЕП:</label>
+      <input type="text" id="equipment-name" placeholder="Наприклад, Шліфувальний верстат" required>
+
+      <label for="efficiency">Коефіцієнт корисної дії (η):</label>
+      <input type="number" id="efficiency" step="0.01" min="0" max="1" required>
+
+      <label for="cos-phi">Коефіцієнт потужності (cos φ):</label>
+      <input type="number" id="cos-phi" step="0.01" min="0" max="1" required>
+
+      <label for="voltage">Напруга (U, кВ):</label>
+      <input type="number" id="voltage" step="0.01" min="0" required>
+
+      <label for="num-units">Кількість ЕП:</label>
+      <input type="number" id="num-units" min="1" required>
+
+      <label for="nominal-power">Номінальна потужність (Pn, кВт):</label>
+      <input type="number" id="nominal-power" step="0.01" min="0" required>
+
+      <label for="utilization-factor">Коефіцієнт використання (Кв):</label>
+      <input type="number" id="utilization-factor" step="0.01" min="0" max="1" required>
+
+      <label for="reactive-factor">Коефіцієнт реактивної потужності (tg φ):</label>
+      <input type="number" id="reactive-factor" step="0.01" required>
+
+      <button type="submit" id="calculate-btn">Розрахувати</button>
+    </form>
+
+    <div id="results">
+      <h2>Результати:</h2>
+      <p id="output"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
